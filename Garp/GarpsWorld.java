@@ -1,4 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootSound;
+import greenfoot.World;
 
 /**
  * Write a description of class GarpsWorld here.
@@ -6,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GarpsWorld extends World
-{
+public class GarpsWorld extends World {
     private GreenfootSound sound;
     /**
      * Constructor for objects of class GarpsWorld.
@@ -34,8 +36,7 @@ public class GarpsWorld extends World
             addObject(new Diamant(),Greenfoot.getRandomNumber(700),Greenfoot.getRandomNumber(500));
         }
     }
-    
-    public void Started() {
+    public void started() {
         sound.playLoop();
     }
     public void stopped() {
