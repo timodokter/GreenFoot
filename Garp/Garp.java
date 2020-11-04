@@ -10,7 +10,8 @@ public class Garp extends Actor
 {
     private GreenfootImage imageLeft;
     private GreenfootImage imageRight;
-    
+    public Counter counter;
+    GarpsWorld thisGame;
     public Garp()
     {
     imageLeft = new GreenfootImage("GarpLeft.png");
@@ -28,11 +29,13 @@ public class Garp extends Actor
     }
     protected void collectingDiamonds() {
         World world;
+        Actor actor;
         Actor diamond;
         diamond = getOneObjectAtOffset(0, 0, Diamant.class);
         if(diamond != null) {
             world = getWorld();
             world.removeObject(diamond);
+            thisGame.score++;
         }
     }
     protected void movingAndTurning() {

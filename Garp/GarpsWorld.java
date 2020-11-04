@@ -10,6 +10,7 @@ import greenfoot.World;
  * @version (a version number or a date)
  */
 public class GarpsWorld extends World {
+    public static int score = 0;
     private GreenfootSound sound;
     /**
      * Constructor for objects of class GarpsWorld.
@@ -21,7 +22,9 @@ public class GarpsWorld extends World {
         super(700, 500, 1); 
         populateTheWorld();
     }
-    
+    public void act() {     
+        showText("Score: " + score, 50, 475);
+    }
     protected void populateTheWorld() {
         addObject(new Garp(),350,250);
         addObject(new Gnomus(),Greenfoot.getRandomNumber(670) + 15,Greenfoot.getRandomNumber(470) + 15);
@@ -41,5 +44,6 @@ public class GarpsWorld extends World {
     }
     public void stopped() {
         sound.stop();
+        score = 0;
     }
 }
