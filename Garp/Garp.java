@@ -36,6 +36,9 @@ public class Garp extends Actor
             world = getWorld();
             world.removeObject(diamond);
             thisGame.score++;
+            if (thisGame.score == 10) {
+                Greenfoot.stop();
+            }
         }
     }
     protected void movingAndTurning() {
