@@ -22,13 +22,13 @@ public class EndScore extends Score {
         }
 
         String scoreText = "Aantal verzamelde diamanten: " + thisGame.score;
-        String duur = this.getElapsedTime();
+        String duur = getElapsedTime();
         GreenfootImage image = new GreenfootImage(breedte, hoogte);
         image.setColor(new Color(125, 125, 125, 100));
         image.fillRect(0, 0, breedte, hoogte);
         image.setColor(new Color(255, 255, 255, 100));
         image.fillRect(0, 0, breedte - 5, hoogte - 5);
-        this.setImage(image);
+        setImage(image);
         hoogte = hoogte - 30;
         Font font = image.getFont();
         font = font.deriveFont(30.0F);
@@ -43,7 +43,7 @@ public class EndScore extends Score {
     }
 
     public String getElapsedTime() {
-        long duration = System.currentTimeMillis() - this.startTime;
+        long duration = System.currentTimeMillis() - startTime;
         int seconden = (int)(duration / 1000L);
         int uren = seconden / 3600;
         seconden %= 3600;

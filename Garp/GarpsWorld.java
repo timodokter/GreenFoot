@@ -50,12 +50,6 @@ public class GarpsWorld extends World {
         addObject(endScore, getWidth() / 2, getHeight() / 2);
         sound.stop();
         score = 0;
-        if (score == 10) {
-            Greenfoot.stop();
-        }
         showText("", 50, 475);
-    }
-    public int getscore() {
-        return this.score;
     }
 }
