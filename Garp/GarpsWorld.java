@@ -14,6 +14,7 @@ public class GarpsWorld extends World {
     public static int score = 0;
     private GreenfootSound sound;
     private EndScore endScore;
+    String ScoreTekst = "Score: ";
     /**
      * Constructor for objects of class GarpsWorld.
      * 
@@ -23,6 +24,7 @@ public class GarpsWorld extends World {
         populateTheWorld();
     }
     public void act() {
+        showText(ScoreTekst + score, 50, 475);
     }
     protected void populateTheWorld() {
         addObject(new Garp(),350,250);
@@ -37,14 +39,11 @@ public class GarpsWorld extends World {
         for(int teller = 0; teller < 10; teller++) {
             addObject(new Diamant(),Greenfoot.getRandomNumber(700),Greenfoot.getRandomNumber(500));
         }
-        setPaintOrder(Text.class, EndScore.class, Garp.class, Gnomus.class, Diamant.class, Bomb.class, Rock.class);
-        addObject(new Text(), 50, 475);
-        repaint();
+        setPaintOrder(EndScore.class, Garp.class, Gnomus.class, Diamant.class, Bomb.class, Rock.class);
     }
     public void started() {
         sound.playLoop();
         endScore = new EndScore();
-        repaint();
     }
     public void stopped() {
         endScore.setEndImage();
@@ -53,8 +52,8 @@ public class GarpsWorld extends World {
         score = 0;
         if (score == 10) {
             Greenfoot.stop();
-            removeObject(new Text());
         }
+        showText("", 50, 475);
     }
     public int getscore() {
         return this.score;
